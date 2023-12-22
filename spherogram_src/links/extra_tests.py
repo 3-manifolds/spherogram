@@ -7,7 +7,7 @@ Crossing, Link, RationalTangle, IdentityBraid = links.Crossing, links.Link, tang
 
 
 def figure8():
-    a, b, c, d = [Crossing(x) for x in 'abcd']
+    a, b, c, d = (Crossing(x) for x in 'abcd')
     a[0] = c[1]
     a[1] = d[0]
     a[2] = b[1]
@@ -27,7 +27,7 @@ def punct_torus():
 
 
 def whitehead():
-    a, b, c, d, e = crossings = [Crossing(x) for x in 'abcde']
+    a, b, c, d, e = crossings = (Crossing(x) for x in 'abcde')
     a[0] = b[3]
     a[1] = d[0]
     a[2] = d[3]
@@ -56,7 +56,7 @@ def knot(fractions):
     if len(fractions) == 1:
         return RationalTangle(*fractions[0]).denominator_closure()
     else:
-        A, B, C = [RationalTangle(*f) for f in fractions]
+        A, B, C = (RationalTangle(*f) for f in fractions)
         T = A + B + C
         return T.numerator_closure()
 
