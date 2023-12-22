@@ -27,7 +27,7 @@ def punct_torus():
 
 
 def whitehead():
-    a, b, c, d, e = crossings = (Crossing(x) for x in 'abcde')
+    a, b, c, d, e = crossings = [Crossing(x) for x in 'abcde']
     a[0] = b[3]
     a[1] = d[0]
     a[2] = d[3]
